@@ -7,18 +7,18 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
     [SerializeField] public float jumpForce = 5;
+    //[SerializeField] private PlayerTurn playerTurn;
     public bool isOnGround = true;
     private float horizontalInput;
     private float forwardInnput;
     private Rigidbody playerRidgidbody;
 
-    void Start()
+    private void Start()
     {
         playerRidgidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Get player input
         horizontalInput = Input.GetAxis("Horizontal");
@@ -28,6 +28,10 @@ public class CharacterMovement : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInnput);
 
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"));
+        }
         //Let Player jump
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
@@ -44,9 +48,8 @@ public class CharacterMovement : MonoBehaviour
         {
             this.transform.Rotate(Vector3.up, 0.5f);
         }
+
     }
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
