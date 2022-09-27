@@ -28,11 +28,16 @@ public class PlayerHealthB : MonoBehaviour
     }
 
     public void TakeDamage(int damage)
-    {
-        Debug.Log("Take damage körs");
+    {        
         currentHealth -= damage;
-        if (currentHealth <= 0)
-            isGameOver = true;
         healthB.SetHealth(currentHealth);
+        Debug.Log("Take damage körs");
+
+        if (currentHealth <= 0)
+        {
+
+            isGameOver = true;
+            Destroy(gameObject);
+        }
     }
 }

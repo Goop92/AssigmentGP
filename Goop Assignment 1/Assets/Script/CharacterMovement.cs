@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    [SerializeField] private ActivePlayerManger manager;
     [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float rotationSpeed;
     [SerializeField] public float jumpForce = 5;
     //[SerializeField] private PlayerTurn playerTurn;
     public bool isOnGround = true;
@@ -16,6 +18,11 @@ public class CharacterMovement : MonoBehaviour
     private void Start()
     {
         playerRidgidbody = GetComponent<Rigidbody>();
+
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            ActivePlayer currentPlayer = manager.GetCurrentPlayer();
+        }
     }
 
     private void Update()
@@ -28,10 +35,6 @@ public class CharacterMovement : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInnput);
 
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            transform.Translate(transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"));
-        }
         //Let Player jump
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
@@ -57,5 +60,4 @@ public class CharacterMovement : MonoBehaviour
             isOnGround = true;
         }
     }
-
 }

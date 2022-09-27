@@ -1,15 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private ActivePlayerManger manager;
+    [SerializeField] private Button botton;
     private bool collided;
-    public float life = 3;
 
+    void Start()
+    {
+        botton.onClick.AddListener(ButtonPressed);
+    }
+    public void ButtonPressed()
+    {
+        ActivePlayer currentPlayer = manager.GetCurrentPlayer();
+        currentPlayer.FireProjectile();
+    }
     void Awake()
     {
-        Destroy(gameObject, life);
+
     }
     void OnCollisionEnter(Collision collider) 
     {
@@ -25,5 +36,4 @@ public class Bullet : MonoBehaviour
         }
 
     }
-
 }
