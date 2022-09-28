@@ -44,11 +44,13 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+            ActivePlayer currentPlayer = manager.GetCurrentPlayer();
             this.transform.Rotate(Vector3.up, -0.5f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
+            ActivePlayer currentPlayer = manager.GetCurrentPlayer();
             this.transform.Rotate(Vector3.up, 0.5f);
         }
 
