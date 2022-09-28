@@ -13,18 +13,10 @@ public class CharacterWeapon : MonoBehaviour
     private void Update()
     {
         ActivePlayer currentPlayer = manager.GetCurrentPlayer();
-        if (Input.GetButtonDown("Fire1") && currentPlayer == playerShoot.GetComponent<ActivePlayer>())
+        if (Input.GetKeyDown(KeyCode.F) && currentPlayer == playerShoot.GetComponent<ActivePlayer>())
         {
             GameObject FireObject = Instantiate(projectile, transform.position, transform.rotation);
             FireObject.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, fireVelocity));
         }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            GameObject FireObject = Instantiate(projectile, transform.position, transform.rotation);
-            FireObject.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, 0, fireVelocity));
-        }
-
-
     }
 }

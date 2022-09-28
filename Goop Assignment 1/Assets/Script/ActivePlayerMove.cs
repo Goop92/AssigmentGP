@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivePlayerInput : MonoBehaviour
+public class ActivePlayerMove : MonoBehaviour
 {
     [SerializeField] private ActivePlayerManger manager;
     [SerializeField] private float rotationSpeed;
@@ -28,7 +28,7 @@ public class ActivePlayerInput : MonoBehaviour
 
         if (Input.GetAxis("Vertical") != 0)
         {
-            currentPlayer.transform.Translate(currentPlayer.transform.forward * rotationSpeed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
+            currentPlayer.transform.Translate(currentPlayer.transform.forward * walkingSpeed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
         }
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
