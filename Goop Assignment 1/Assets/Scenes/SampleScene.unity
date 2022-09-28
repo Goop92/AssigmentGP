@@ -772,7 +772,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961685289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6c1f24efa1ebf419f5532e783d0d06, type: 3}
   m_Name: 
@@ -801,7 +801,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 90
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &961685295
 BoxCollider:
@@ -857,6 +857,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ade8ad2a0582a44ad5cb0506961f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &961685305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961685289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c28acfd7de527428f38282509cf18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1004008714}
+  rotationSpeed: 2
+  walkingSpeed: 4
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1001,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1004008716
 MonoBehaviour:
@@ -1315,7 +1330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086eb02a034a73a448360b9cee9aa930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1004008714}
   projectile: {fileID: 3389462956156177511, guid: e5c729db9ad71014fac0f613c31eef81, type: 3}
+  playerShoot: {fileID: 1236019527}
   fireVelocity: 5000
 --- !u!1001 &1134984144
 PrefabInstance:
@@ -1335,7 +1352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058866896921748, guid: f10c394033f254647873f3d28a75a062, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4058866896921748, guid: f10c394033f254647873f3d28a75a062, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1571,7 +1588,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236019527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a6c1f24efa1ebf419f5532e783d0d06, type: 3}
   m_Name: 
@@ -1627,6 +1644,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ade8ad2a0582a44ad5cb0506961f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1236019541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236019527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c28acfd7de527428f38282509cf18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1004008714}
+  rotationSpeed: 2
+  walkingSpeed: 4
 --- !u!1 &1297455305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,7 +1755,7 @@ RectTransform:
   m_Children:
   - {fileID: 1458962728}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1889,7 +1921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058866896921748, guid: f10c394033f254647873f3d28a75a062, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4058866896921748, guid: f10c394033f254647873f3d28a75a062, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2464,7 +2496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086eb02a034a73a448360b9cee9aa930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1004008714}
   projectile: {fileID: 3389462956156177511, guid: e5c729db9ad71014fac0f613c31eef81, type: 3}
+  playerShoot: {fileID: 961685289}
   fireVelocity: 5000
 --- !u!1 &2141346495
 GameObject:
@@ -2498,5 +2532,5 @@ Transform:
   - {fileID: 1804467897}
   - {fileID: 1965653450}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
