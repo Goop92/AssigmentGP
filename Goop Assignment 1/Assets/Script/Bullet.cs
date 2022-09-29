@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private ActivePlayerManger manager;
-    [SerializeField] private Button botton;
+    //[SerializeField] private ActivePlayerManger manager;
+    //[SerializeField] private Button botton;
     private bool collided;
 
     void Start()
     {
-        botton.onClick.AddListener(ButtonPressed);
+
     }
     public void ButtonPressed()
     {
-        ActivePlayer currentPlayer = manager.GetCurrentPlayer();
-        currentPlayer.FireProjectile();
+        //ActivePlayer currentPlayer = manager.GetCurrentPlayer();
+        //currentPlayer.FireProjectile();
     }
     void Awake()
     {

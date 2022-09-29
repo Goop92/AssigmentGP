@@ -13,10 +13,12 @@ public class ActivePlayerManger : MonoBehaviour
     private ActivePlayer currentPlayer;
     void Start() 
     {
+
         Player1.AssignManager(this);
         Player2.AssignManager(this);
 
         currentPlayer = Player1;
+        
     }
 
 public ActivePlayer GetCurrentPlayer()
