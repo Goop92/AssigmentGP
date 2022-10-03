@@ -8,6 +8,12 @@ public class HealthB : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    private PlayerHealthB HPscript;
+
+    private void Awake()
+    {
+        HPscript = FindObjectOfType<PlayerHealthB>().GetComponent<PlayerHealthB>();
+    }
 
     public void SetMaxHealth(int health)
     {
@@ -21,5 +27,10 @@ public class HealthB : MonoBehaviour
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
+
+        if (HPscript.currentHealth > HPscript.maxHealth)
+        {
+            HPscript.currentHealth = HPscript.maxHealth;
+        }
     }
 }
